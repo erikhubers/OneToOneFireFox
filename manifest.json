@@ -3,7 +3,7 @@
     "name": "One to One URL Shortener",
     "description": "A fast and easy way to generate a shortened URL.",
     "version": "1.0",
-    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/context-menu-copy-link-with-types",
+    "homepage_url": "https://github.com/erikhubers/OneToOneFireFox",
 
     "background": {
         "scripts": [
