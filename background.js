@@ -17,17 +17,15 @@ function shortenCurrentUrl() {
   }).then(queryInfo => {
     browser.tabs.get(queryInfo[0].id).then(tab => {
       var tabUrl = tab.url;
-      fetch("https://1t1.nl/api/v2/action/shorten?key=3835e9fbac074cb68373a2da363d68&response_type=json&url=" + tab.url, {
+      fetch("https://1t1.nl/api/v2/action/shorten?key=3835e9fbac074cb68373a2da363d68&response_type=json&url=" + encodeURIComponent(tab.url), {
           method: "GET"
         })
-        // .then(response => console.log("Response received! " + JSON.stringify(response)))
         .then(response => response.json())
-
         .then(response => {
-          console.log('Success:' + response['result']);
+          console.log('Success! Short:' + response['result'] + ' | Original: ' + encodeURIComponent(tab.url));
           var shortened = response['result'];
           if (shortened != null && shortened.includes("http")) {
-            console.log("contains http");
+            console.log("Valid shortened url");
             toClipBoard(tab, shortened);
           }
         })
