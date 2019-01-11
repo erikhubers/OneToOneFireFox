@@ -23,7 +23,7 @@ function shortenCurrentUrl() {
         .then(response => response.json())
         .then(response => {
           console.log('Success! Short:' + response['result'] + ' | Original: ' + encodeURIComponent(tab.url));
-          var shortened = response['result'];
+          var shortened = htmlEscape(encodeURIComponent(response['result']));
           if (shortened != null && shortened.includes("http")) {
             console.log("Valid shortened url");
             toClipBoard(tab, shortened);
