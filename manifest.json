@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "One to One URL Shortener",
     "description": "A fast and easy way to generate a shortened URL.",
-    "version": "1.1",
+    "version": "1.1.2",
     "homepage_url": "https://github.com/erikhubers/OneToOneFireFox",
 
     "background": {
